@@ -1,0 +1,237 @@
+body {
+  background-image: linear-gradient(to right, #000447, #000000);
+  padding: 0;
+  margin: 0;
+  font-family: "Orbitron", sans-serif;
+  color: #ffffff;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  height: 14rem;
+  position: relative;
+  z-index: 10;
+  background-position: 10% 20%;
+  background-size: cover;
+  box-shadow: 0 0 20px #00f2ff44;
+}
+
+header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4rem;
+  width: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+  pointer-events: none;
+}
+
+header img {
+  width: 15rem;
+  filter: drop-shadow(0 0 10px #00f2ff66);
+}
+
+.menu-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.menu-links a {
+  font-size: 1.1rem;
+  color: #00f2ff;
+  text-decoration: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  border: 1px solid #00f2ff33;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-links a:hover {
+  background-color: #00f2ff22;
+  color: #ffffff;
+  box-shadow: 0 0 10px #00f2ff88;
+}
+
+.fade-title {
+  font-size: 3rem;
+  text-align: center;
+  position: relative;
+  top: -22rem;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  text-shadow: 0 0 12px #00f2ff;
+  letter-spacing: 1px;
+  color: #00f2ff;
+}
+
+.fade-title.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@font-face {
+  font-family: "EleganTech";
+  src: url("../font/elegantech/EleganTech-.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap");
+
+.conteudo-tecnologia {
+  background: linear-gradient(145deg, #0d0d2b, #1b1b3a);
+  color: #ffffff;
+  font-family: "Orbitron", sans-serif;
+  padding: 40px 20px;
+}
+
+.tecnologia-box {
+  max-width: 1000px;
+  margin: auto;
+  background-color: rgba(0, 255, 255, 0.05);
+  border: 1px solid rgba(0, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 0 20px #00f2ff33;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease;
+}
+
+.tecnologia-box:hover {
+  transform: scale(1.02);
+}
+
+.tecnologia-box h2 {
+  color: #00f2ff;
+  font-size: 1.5rem;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  text-shadow: 0 0 10px #00f2ff;
+  border-left: 4px solid #00f2ff;
+  padding-left: 10px;
+}
+
+.tecnologia-box ul {
+  list-style-type: "";
+  padding-left: 20px;
+}
+
+.tecnologia-box li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #d0eaff;
+}
+footer {
+  background-color: #111;
+  color: #ccc;
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.9rem;
+  margin-top: 4rem;
+  border-top: 1px solid #333;
+}
+@media (max-width: 1024px) {
+  .conteudo {
+    padding: 0 1rem;
+  }
+
+  .fade-title {
+    font-size: 2.2rem;
+    top: -18rem;
+  }
+
+  .conteudo h2 {
+    font-size: 2rem;
+  }
+
+  .solucao {
+    gap: 2rem;
+  }
+
+  .solucao-item h3 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  header img {
+    width: 10rem;
+    margin-bottom: 1rem;
+  }
+
+  .menu-links {
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  nav video {
+    height: 25rem;
+  }
+
+  .fade-title {
+    font-size: 1.8rem;
+    top: -12rem;
+    padding: 0 1rem;
+  }
+
+  .conteudo {
+    padding: 0 1rem;
+    gap: 3rem;
+  }
+
+  .conteudo h2 {
+    font-size: 1.8rem;
+  }
+
+  .conteudo p {
+    font-size: 1rem;
+  }
+
+  .solucao {
+    flex-direction: column;
+  }
+
+  .solucao-item {
+    padding: 1.5rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .fade-title {
+    font-size: 1.5rem;
+    top: -10rem;
+  }
+
+  .conteudo h2 {
+    font-size: 1.5rem;
+  }
+
+  .solucao-item h3 {
+    font-size: 1.3rem;
+  }
+
+  footer {
+    font-size: 0.8rem;
+    padding: 1rem;
+  }
+}
