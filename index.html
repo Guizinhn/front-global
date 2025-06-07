@@ -12,12 +12,16 @@
         src="img/ChatGPT_Image_2_de_jun._de_2025__12_00_26-removebg-preview.png"
         alt="logo"
       />
-      <div class="menu-links">
-        <a href="pages/tec.html">Tecnologia</a>
-        <a href="pages/objetivos.html">Objetivos</a>
-        <a href="pages/publico.html">Público-alvo</a>
-        <a href="pages/beneficios.html">Benefícios</a>
-        <a href="pages/ajudaria.html">Como isso ajudaria</a>
+      <button class="hamburguer" id="menuToggle">☰</button>
+
+      <div class="menu-container" id="menuContainer">
+        <div class="menu-links">
+          <a href="pages/tec.html">Tecnologia</a>
+          <a href="pages/objetivos.html">Objetivos</a>
+          <a href="pages/publico.html">Público-alvo</a>
+          <a href="pages/beneficios.html">Benefícios</a>
+          <a href="pages/ajudaria.html">Como isso ajudaria</a>
+        </div>
       </div>
     </header>
 
@@ -30,6 +34,27 @@
       ></video>
       <h1 class="fade-title">Enchentes no Brasil</h1>
     </nav>
+    <section class="slideshow">
+      <div class="slideshow">
+        <div class="slides">
+          <img
+            src="img/pexels-nejc-kosir-108379-338936.jpg"
+            class="slide active"
+            alt="Slide 1"
+          />
+          <img src="img/lizard-9127922_1280.jpg" class="slide" alt="Slide 2" />
+          <img
+            src="img/pexels-umkreisel-app-957024.jpg"
+            class="slide"
+            alt="Slide 3"
+          />
+        </div>
+        <div class="slide-buttons">
+          <button id="prevBtn">&#10094;</button>
+          <button id="nextBtn">&#10095;</button>
+        </div>
+      </div>
+    </section>
 
     <main class="conteudo">
       <section class="problema">
@@ -100,9 +125,25 @@
         </p>
       </section>
     </main>
-    <footer>
+   
+<!-- Form e quiz centralizados -->
+<div class="centered-content">
+  <form id="meuForm" novalidate>
+    <input type="text" id="nome" name="nome" placeholder="Seu nome" required />
+    <input type="email" id="email" name="email" placeholder="Seu email" required />
+    <button type="submit">Enviar</button>
+  </form>
+
+  <!-- Quiz -->
+  <div id="quiz-container"></div>
+  <button id="submit-quiz">Enviar Respostas</button>
+  <div id="quiz-result"></div>
+</div>
+
       <p>
-        Projeto FIAP - Solução Contra Enchentes • Grupo Ecozion, desenvolvimento por Guilherme moura badia(RM561568), João Verardo (RM563700), Sofia bomeny (RM563270)
+        Projeto FIAP - Solução Contra Enchentes • Grupo Ecozion, desenvolvimento
+        por Guilherme moura badia(RM561568), João Verardo (RM563700), Sofia
+        bomeny (RM563270)
       </p>
     </footer>
 
