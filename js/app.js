@@ -36,12 +36,13 @@ function prevSlide() {
   showSlide(currentSlide);
 }
 
-
+// Botões do slideshow
 document.getElementById("prevBtn").addEventListener("click", prevSlide);
 document.getElementById("nextBtn").addEventListener("click", nextSlide);
 
 showSlide(currentSlide);
 
+// Menu hamburguer toggle
 const toggleButton = document.getElementById("menuToggle");
 const menuLinks = document.querySelector(".menu-links");
 
@@ -49,10 +50,16 @@ toggleButton.addEventListener("click", () => {
   menuLinks.classList.toggle("show");
 });
 
+// Troca de cor de fundo (caso tenha esses botões no HTML)
+const colorRed = document.querySelector('.color-red');
+const colorBlue = document.querySelector('.color-blue');
+const colorGreen = document.querySelector('.color-green');
 
+if(colorRed) colorRed.addEventListener('click', () => { document.body.style.backgroundColor = '#e74c3c'; });
+if(colorBlue) colorBlue.addEventListener('click', () => { document.body.style.backgroundColor = '#3498db'; });
+if(colorGreen) colorGreen.addEventListener('click', () => { document.body.style.backgroundColor = '#2ecc71'; });
 
-
-
+// Validação do formulário
 const form = document.getElementById('meuForm');
 if(form) {
   form.addEventListener('submit', function(e) {
@@ -66,7 +73,7 @@ if(form) {
   });
 }
 
-
+// Quiz
 const quizData = [
   { question: "Qual a capital do Brasil?", options: ["Rio", "Brasília", "SP", "Salvador"], answer: "Brasília" },
   { question: "2 + 2 = ?", options: ["3", "4", "5", "6"], answer: "4" },
@@ -85,43 +92,46 @@ const submitBtn = document.getElementById('submit-quiz');
 const resultDiv = document.getElementById('quiz-result');
 
 function buildQuiz() {
-  if(!quizContainer) return;
+  if (!quizContainer) return;
   const output = [];
+
   quizData.forEach((q, i) => {
-    const optionsHTML = q.options.map(opt => 
+    const optionsHTML = q.options.map(opt =>
       `<label>
         <input type="radio" name="question${i}" value="${opt}"> ${opt}
       </label>`
     ).join('');
-    output.push(
-      `<div class="question">${i + 1}. ${q.question}</div>
-       <div class="options">${optionsHTML}</div>`
-    );
+
+    output.push(`
+      <div class="question"><strong>${i + 1}. ${q.question}</strong></div>
+      <div class="options">${optionsHTML}</div>
+    `);
   });
+
   quizContainer.innerHTML = output.join('');
 }
 
 function showResults() {
-  if(!quizContainer) return;
+  if (!quizContainer) return;
   let score = 0;
+
   quizData.forEach((q, i) => {
-    const selected = document.querySelector(`input[name=question${i}]:checked`);
-    if (selected && selected.value === q.answer) score++;
+    const selected = document.querySelector(`input[name="question${i}"]:checked`);
+    if (selected && selected.value === q.answer) {
+      score++;
+    }
   });
-  if(resultDiv) {
+
+  if (resultDiv) {
     resultDiv.textContent = `Você acertou ${score} de ${quizData.length} perguntas.`;
   }
 }
 
-buildQuiz();
+// Ajuste: construir quiz ao carregar a página e ligar botão enviar
+document.addEventListener('DOMContentLoaded', () => {
+  buildQuiz();
+});
 
-if(submitBtn) {
+if (submitBtn) {
   submitBtn.addEventListener('click', showResults);
 }
-document.querySelectorAll('.color-btn').forEach(button => {
-  button.addEventListener('click', function () {
-    const color = this.getAttribute('data-color');
-    document.body.style.backgroundImage = `none`;
-    document.body.style.backgroundColor = color;
-  });
-});
